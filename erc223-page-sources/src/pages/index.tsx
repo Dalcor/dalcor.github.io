@@ -136,7 +136,6 @@ export default function Home() {
           <div onClick={async () => {
             await navigator.clipboard.writeText(addressForDonation);
             showMessage("Wallet address copied");
-            console.log("Copied!");
           }} role="button" className={styles.donation}>
             <img src={`${basePath}/donat.png`} alt=""/>
             <div className={styles.donationText}>
