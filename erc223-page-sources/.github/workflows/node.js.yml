@@ -26,4 +26,9 @@ jobs:
         run: npm run build && npm run export && touch ./out/.nojekyll
 
       - name: Move build to erc folder 🚀
-        run: mv ./out/* ../erc223 && rm ./out
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.token }}
+          BRANCH: master # The branch the action should deploy to.
+          FOLDER: erc223-page-sources/out # The folder the action should deploy.
+          TARGET_FOLDER: erc223
