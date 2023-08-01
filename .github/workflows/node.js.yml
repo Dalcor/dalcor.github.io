@@ -9,8 +9,7 @@ on:
       - erc223-page-sources/**
     branches: [master]
 concurrency:
-  group: ${{ github.job }}-${{ github.ref }}
-  cancel-in-progress: false
+  group: ci-${{ github.ref }}
 jobs:
   build:
     runs-on: ubuntu-latest
