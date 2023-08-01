@@ -24,7 +24,7 @@ jobs:
           node-version: '16.x'
 
       - name: Installing my packages
-        run: npm install
+        run: cd erc223-page-sources && npm install
 
       - name: Build my App
         run: cd erc223-page-sources && npm run build && npm run export
