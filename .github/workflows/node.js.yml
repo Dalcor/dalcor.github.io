@@ -8,6 +8,9 @@ on:
     paths:
       - erc223-page-sources/**
     branches: [master]
+concurrency:
+  group: erc223
+  cancel-in-progress: false
 jobs:
   build:
     runs-on: ubuntu-latest
