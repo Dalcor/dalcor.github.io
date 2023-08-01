@@ -9,7 +9,7 @@ on:
       - erc223-page-sources/**
     branches: [master]
 concurrency:
-  group: erc223
+  group: ${{ github.job }}
   cancel-in-progress: false
 jobs:
   build:
