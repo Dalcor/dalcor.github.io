@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build my App
-        run: npm run build && npm run export
+        run: cd erc223-page-sources && npm run build && npm run export
 
       - name: Move build to erc folder 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.1
