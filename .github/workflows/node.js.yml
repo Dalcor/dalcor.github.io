@@ -5,6 +5,8 @@ name: GitHub Pages deploy
 
 on:
   push:
+    paths:
+      - erc223-page-sources/**
     branches: [master]
 jobs:
   build:
