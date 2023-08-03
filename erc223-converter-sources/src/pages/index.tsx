@@ -198,7 +198,7 @@ export default function Home() {
               <button onClick={() => switchNetwork?.(820)} className={styles.convertButton}>Change to callisto</button>
             </div>}
 
-            {isConnected && isNetworkSupported && <div className={styles.converterFieldsWrapper}>
+            {isNetworkSupported && <div className={styles.converterFieldsWrapper}>
               <div className={styles.converterFieldsLabel}>Token to convert</div>
               <div className={styles.converterFields}>
                 <div className={styles.amountInputWrapper}>
