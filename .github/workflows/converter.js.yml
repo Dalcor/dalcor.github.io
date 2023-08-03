@@ -6,7 +6,7 @@ name: GitHub Pages deploy
 on:
   push:
     paths:
-      - erc223-convertor-sources/**
+      - erc223-converter-sources/**
     branches: [master]
 concurrency:
   group: ci-${{ github.ref }}
