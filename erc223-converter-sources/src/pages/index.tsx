@@ -1,7 +1,9 @@
+// @ts-nocheck
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import {
+  Address,
   useAccount,
   useBalance, useChainId,
   useConnect,
@@ -25,7 +27,7 @@ import { useSwitchNetwork } from 'wagmi'
 
 
 const CLOConverterContractAddress = "0xB83b6a34802bb4149834110c28e3E0e270d804A8";
-const testTokenAddress = "0x9e3549954138E52C230aCB92A9358C3842ABEb41";
+const testTokenAddress: Address = "0x9e3549954138E52C230aCB92A9358C3842ABEb41";
 const soyAddress = "0x9FaE2529863bD691B4A7171bDfCf33C7ebB10a65";
 const manrope = Manrope({subsets: ['latin']});
 
@@ -79,8 +81,6 @@ export default function Home() {
     watch: true
   });
 
-  console.log("Allowance for current token:");
-  console.log(readData);
 
   const {config: allowanceConfig} = usePrepareContractWrite({
     address: testTokenAddress,
@@ -94,9 +94,6 @@ export default function Home() {
 
   const {write: writeTokenApprove, data: allowanceData} = useContractWrite(allowanceConfig);
 
-  console.log("allowanceData")
-  console.log(formatEther(readData?.toString() || "0"));
-  console.log(amountToConvert);
   const {data: approvingData, isLoading: approving} = useWaitForTransaction({
     hash: allowanceData?.hash
   })
